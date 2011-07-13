@@ -18,7 +18,7 @@ class Pianobar < Formula
 
   def install
     # Force GCC into c99 mode
-    ENV.append 'CFLAGS', "-std=c99"
+    ENV.append 'CFLAGS', "-std=c99 -D_DARWIN_C_SOURCE"
 
     system "make", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
